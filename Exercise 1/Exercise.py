@@ -2,11 +2,11 @@ import pickle
 
 
 class Auto:
-    def _init_(self, modelo, placa):
+    def __init__(self, modelo, placa):
         self.modelo = modelo
         self.placa = placa
 
-    def _repr_(self):
+    def __repr__(self):
         return f"El auto {self.modelo} tiene placa {self.placa}"
 
 
@@ -20,7 +20,18 @@ objeto_auto4 = Auto("Mazda3", "ABC124")
 # Escritura en autos.txt
 archivo_auto = open("autos.txt", "wb")
 pickle.dump(objeto_auto, archivo_auto)
+pickle.dump(objeto_auto1, archivo_auto)
+pickle.dump(objeto_auto2, archivo_auto)
+pickle.dump(objeto_auto3, archivo_auto)
+pickle.dump(objeto_auto4, archivo_auto)
+
 archivo_auto.close()
 
 # Lectura en autos.txt
-archivo_auto = open("autos.txt", "rb")
+with open("autos.txt", "rb") as archivo_auto:
+    while True:
+        try:
+            auto_leido = pickle.load(archivo_auto)
+            print(auto_leido)
+        except EOFError:
+            break
