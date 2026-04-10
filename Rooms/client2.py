@@ -3,7 +3,7 @@ import threading
 
 
 class ChatClient:
-    def __init__(self, host="192.168.1.3", port=5555):
+    def __init__(self, host="10.127.150.102", port=5555):
         self.host = host
         self.port = port
 
