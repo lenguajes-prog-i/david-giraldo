@@ -10,7 +10,7 @@ def main():
     cliente.connect((host, port))
 
     tarea = {
-        "cliente": "Cliente 7",
+        "cliente": "Cliente 5",
         "operacion": "cuadrados",
         "datos": [3, 5, 7, 9]
     }
